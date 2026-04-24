@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monteiro & Associados — Advocacia Tributária e Empresarial</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #162032;
+    --navy-light: #1e2e42;
+    --gold: #b89a5e;
+    --gold-light: #d4b87a;
+    --gold-pale: #f0e4c8;
+    --cream: #f8f5ef;
+    --cream-dark: #ede8de;
+    --text-dark: #0d1b2a;
+    --text-mid: #3a4a5c;
+    --text-light: #6b7f94;
+    --white: #ffffff;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text-dark);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 6%;
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(184,154,94,0.25);
+  }
+
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    border: none;
+    padding: 0.65rem 1.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 6% 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(184,154,94,0.06) 100%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 80px;
+    background: var(--cream);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  }
+
+  .hero-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--cream);
+    max-width: 780px;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-desc {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(248,245,239,0.65);
+    max-width: 540px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-ghost {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: transparent;
+    border: 1px solid rgba(248,245,239,0.3);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stat-row {
+    position: absolute;
+    bottom: 6rem;
+    right: 6%;
+    display: flex;
+    gap: 3rem;
+  }
+
+  .hero-stat {
+    text-align: right;
+  }
+
+  .hero-stat-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.45);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* SEPARATOR */
+  .sep {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sep-line {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .sep-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 7rem 6%;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-wrap {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--navy-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(184,154,94,0.04) 3px,
+        rgba(184,154,94,0.04) 4px
+      );
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--gold);
+    padding: 1.8rem;
+    text-align: center;
+    width: 140px;
+  }
+
+  .about-badge-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+    display: block;
+  }
+
+  .about-badge-text {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .about-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 1.8rem;
+  }
+
+  .about-text h2 em { font-style: italic; color: var(--text-mid); }
+
+  .about-text p {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text-mid);
+    margin-bottom: 1.2rem;
+  }
+
+  .about-text p:last-of-type { margin-bottom: 2rem; }
+
+  /* PRACTICE AREAS */
+  .areas {
+    padding: 7rem 6%;
+    background: var(--navy);
+    position: relative;
+  }
+
+  .areas-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .areas-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+  }
+
+  .areas-header p {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(248,245,239,0.6);
+    padding-bottom: 0.5rem;
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(184,154,94,0.2);
+  }
+
+  .area-card {
+    background: var(--navy-light);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .area-card:hover { background: var(--navy-mid); }
+
+  .area-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s ease;
+  }
+
+  .area-card:hover::before { height: 100%; }
+
+  .area-num {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(184,154,94,0.15);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .area-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .area-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .area-card p {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(248,245,239,0.55);
+    margin-bottom: 1.5rem;
+  }
+
+  .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .area-tag {
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(184,154,94,0.3);
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* DIFERENCIAIS */
+  .diff {
+    padding: 7rem 6%;
+    background: var(--cream-dark);
+  }
+
+  .diff-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .diff-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .diff-header p {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-light);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .diff-item {
+    padding: 2rem;
+    background: var(--cream);
+    border-top: 2px solid var(--gold);
+    transition: transform 0.2s;
+  }
+
+  .diff-item:hover { transform: translateY(-4px); }
+
+  .diff-item h4 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+  }
+
+  .diff-item p {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+
+  /* ADVOGADOS */
+  .team {
+    padding: 7rem 6%;
+    background: var(--cream);
+  }
+
+  .team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+  }
+
+  .team-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .team-header p {
+    max-width: 340px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.8;
+    padding-bottom: 0.2rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .team-card {
+    background: var(--navy);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .team-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--navy-mid);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .team-photo-placeholder {
+    width: 60%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-photo-placeholder svg {
+    width: 60%;
+    opacity: 0.3;
+  }
+
+  .team-gold-bar {
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .team-info {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(184,154,94,0.2);
+  }
+
+  .team-name {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--cream);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .team-role {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .team-spec {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(248,245,239,0.5);
+    line-height: 1.7;
+  }
+
+  /* CONTATO */
+  .contact {
+    padding: 7rem 6%;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-left h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h2 em { font-style: italic; color: var(--gold-light); }
+
+  .contact-left p {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(248,245,239,0.6);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-detail-label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-detail-value {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(248,245,239,0.75);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.5);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--cream);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(184,154,94,0.2);
+    padding: 0.9rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: rgba(184,154,94,0.6);
+  }
+
+  .form-group select option {
+    background: var(--navy-mid);
+    color: var(--cream);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: var(--sans);
+  }
+
+  .form-submit {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    border: none;
+    padding: 1.1rem 2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  footer {
+    background: #080f18;
+    padding: 3rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(184,154,94,0.15);
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--cream);
+    opacity: 0.7;
+    letter-spacing: 0.04em;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-copy {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: rgba(248,245,239,0.35);
+    text-align: center;
+  }
+
+  .footer-oab {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: rgba(248,245,239,0.35);
+    text-align: right;
+  }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Decorative vertical text */
+  .vert-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(184,154,94,0.35);
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  @media (max-width: 900px) {
+    .about { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { display: none; }
+    .areas-header, .contact { grid-template-columns: 1fr; gap: 2rem; }
+    .areas-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .hero-stat-row { display: none; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .team-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Monteiro <span>&</span> Associados</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">O Escritório</a></li>
+    <li><a href="#atuacao">Áreas de Atuação</a></li>
+    <li><a href="#equipe">Equipe</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Fale com um Advogado</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Advocacia Tributária & Empresarial</div>
+  <h1>Segurança jurídica para <em>decisões que importam</em></h1>
+  <p class="hero-desc">
+    Assessoria especializada em Direito Tributário, Empresarial e Licitações Públicas, com atuação técnica, ética e comprometida com os resultados dos nossos clientes.
+  </p>
+  <div class="hero-actions">
+    <a href="#contato" class="btn-primary">Agendar Consulta</a>
+    <a href="#atuacao" class="btn-ghost">Nossas Especialidades</a>
+  </div>
+  <div class="hero-stat-row">
+    <div class="hero-stat">
+      <span class="hero-stat-num">+20</span>
+      <span class="hero-stat-label">Anos de atuação</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">98%</span>
+      <span class="hero-stat-label">Índice de satisfação</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">+500</span>
+      <span class="hero-stat-label">Clientes atendidos</span>
+    </div>
+  </div>
+  <span class="vert-text">Monteiro & Associados — Advocacia</span>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="about-visual reveal">
+    <div class="about-img-wrap">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.12;">
+        <rect x="80" y="60" width="240" height="300" rx="2" fill="none" stroke="#b89a5e" stroke-width="1"/>
+        <line x1="110" y1="110" x2="290" y2="110" stroke="#b89a5e" stroke-width="0.8"/>
+        <line x1="110" y1="130" x2="290" y2="130" stroke="#b89a5e" stroke-width="0.8"/>
+        <line x1="110" y1="150" x2="250" y2="150" stroke="#b89a5e" stroke-width="0.8"/>
+        <line x1="110" y1="190" x2="290" y2="190" stroke="#b89a5e" stroke-width="0.8"/>
+        <line x1="110" y1="210" x2="290" y2="210" stroke="#b89a5e" stroke-width="0.8"/>
+        <line x1="110" y1="230" x2="270" y2="230" stroke="#b89a5e" stroke-width="0.8"/>
+        <circle cx="200" cy="400" r="40" fill="none" stroke="#b89a5e" stroke-width="1"/>
+        <path d="M175 395 L195 415 L225 385" stroke="#b89a5e" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+    <div class="about-badge">
+      <span class="about-badge-num">20+</span>
+      <span class="about-badge-text">Anos de<br>excelência</span>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <div class="sep">
+      <div class="sep-line"></div>
+      <span class="sep-label">O Escritório</span>
+    </div>
+    <h2>Tradição, <em>rigor técnico</em> e resultados concretos</h2>
+    <p>
+      Fundado há mais de duas décadas, o escritório Monteiro & Associados construiu sua reputação com base na profundidade técnica, na ética profissional e no compromisso genuíno com os interesses dos clientes.
+    </p>
+    <p>
+      Atuamos com empresas de médio e grande porte, grupos econômicos, entidades públicas e privadas, oferecendo assessoria preventiva e contenciosa nas áreas tributária, empresarial e de licitações públicas.
+    </p>
+    <p>
+      Nossa equipe é composta por advogados especializados, com formação em instituições de referência e atualização constante perante as mais recentes decisões dos Tribunais Superiores.
+    </p>
+    <a href="#contato" class="btn-primary">Conheça Nossa Equipe</a>
+  </div>
+</section>
+
+<!-- ÁREAS DE ATUAÇÃO -->
+<section class="areas" id="atuacao">
+  <div class="areas-header reveal">
+    <div>
+      <div class="sep">
+        <div class="sep-line" style="background:rgba(184,154,94,0.6)"></div>
+        <span class="sep-label">Especialidades</span>
+      </div>
+      <h2>Áreas de<br>Atuação</h2>
+    </div>
+    <p>
+      Atendemos com profundidade técnica nas principais frentes do Direito empresarial, tributário e público, com soluções sob medida para cada cliente.
+    </p>
+  </div>
+
+  <div class="areas-grid reveal">
+
+    <div class="area-card">
+      <span class="area-num">01</span>
+      <h3>Direito Tributário</h3>
+      <p>Assessoria completa em questões tributárias, com foco em planejamento, recuperação de créditos e defesa em processos administrativos e judiciais.</p>
+      <div class="area-tags">
+        <span class="area-tag">Planejamento Fiscal</span>
+        <span class="area-tag">Recuperação de Créditos</span>
+        <span class="area-tag">ICMS / ISS / PIS / COFINS</span>
+        <span class="area-tag">Contencioso Tributário</span>
+        <span class="area-tag">CARF e CSRF</span>
+      </div>
+    </div>
+
+    <div class="area-card">
+      <span class="area-num">02</span>
+      <h3>Direito Empresarial</h3>
+      <p>Suporte jurídico estratégico para empresas em todas as fases do ciclo empresarial, da constituição à reestruturação societária.</p>
+      <div class="area-tags">
+        <span class="area-tag">Contratos Empresariais</span>
+        <span class="area-tag">M&A e Fusões</span>
+        <span class="area-tag">Governança Corporativa</span>
+        <span class="area-tag">Recuperação Judicial</span>
+        <span class="area-tag">Compliance</span>
+      </div>
+    </div>
+
+    <div class="area-card">
+      <span class="area-num">03</span>
+      <h3>Licitações Públicas</h3>
+      <p>Assessoria completa no processo de participação em certames públicos, impugnações, recursos e execução de contratos administrativos.</p>
+      <div class="area-tags">
+        <span class="area-tag">Nova Lei de Licitações</span>
+        <span class="area-tag">Impugnações e Recursos</span>
+        <span class="area-tag">Contratos Administrativos</span>
+        <span class="area-tag">Concessões e PPP</span>
+        <span class="area-tag">Pregão Eletrônico</span>
+      </div>
+    </div>
+
+    <div class="area-card">
+      <span class="area-num">04</span>
+      <h3>Direito Regulatório e Correlatos</h3>
+      <p>Atuação nos segmentos regulados e em matérias correlatas ao direito público e privado, com visão integrada e interdisciplinar.</p>
+      <div class="area-tags">
+        <span class="area-tag">Direito Regulatório</span>
+        <span class="area-tag">Direito Administrativo</span>
+        <span class="area-tag">Infraestrutura</span>
+        <span class="area-tag">Energia e Saneamento</span>
+        <span class="area-tag">Direito Imobiliário</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diff">
+  <div class="diff-header reveal">
+    <div class="sep" style="justify-content:center;">
+      <div class="sep-line"></div>
+      <span class="sep-label">Por que nos escolher</span>
+      <div class="sep-line"></div>
+    </div>
+    <h2>Nossos Diferenciais</h2>
+    <p>Mais do que representação jurídica — somos parceiros estratégicos comprometidos com a proteção e o crescimento do seu negócio.</p>
+  </div>
+
+  <div class="diff-grid reveal">
+    <div class="diff-item">
+      <h4>Atuação Preventiva</h4>
+      <p>Identificamos riscos antes que se tornem problemas. Nossa abordagem é orientada à prevenção, com diagnósticos jurídicos periódicos e assessoria proativa.</p>
+    </div>
+    <div class="diff-item">
+      <h4>Equipe Multidisciplinar</h4>
+      <p>Advogados com pós-graduação em Direito Tributário, Empresarial e Público, além de parceiros estratégicos em contabilidade e consultoria fiscal.</p>
+    </div>
+    <div class="diff-item">
+      <h4>Atendimento Personalizado</h4>
+      <p>Cada cliente tem um advogado responsável dedicado, garantindo comunicação direta, ágil e soluções alinhadas à realidade do negócio.</p>
+    </div>
+    <div class="diff-item">
+      <h4>Atualização Permanente</h4>
+      <p>Acompanhamos diariamente a jurisprudência dos Tribunais Superiores, CARF, TCU e demais órgãos, garantindo estratégias sempre atualizadas.</p>
+    </div>
+    <div class="diff-item">
+      <h4>Transparência e Ética</h4>
+      <p>Atuamos com total transparência nas honorárias, nos prazos e nos encaminhamentos processuais. Nosso compromisso é com a verdade e com o cliente.</p>
+    </div>
+    <div class="diff-item">
+      <h4>Visão Estratégica</h4>
+      <p>Não entregamos apenas pareceres — desenvolvemos soluções integradas que consideram os objetivos de negócio, os riscos fiscais e o ambiente regulatório.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="team" id="equipe">
+  <div class="team-header reveal">
+    <div>
+      <div class="sep">
+        <div class="sep-line"></div>
+        <span class="sep-label">Nossa Equipe</span>
+      </div>
+      <h2>Advogados<br>Especializados</h2>
+    </div>
+    <p>Profissionais com formação de excelência e experiência comprovada nos principais tribunais e instâncias administrativas do país.</p>
+  </div>
+
+  <div class="team-grid reveal">
+
+    <div class="team-card">
+      <div class="team-photo">
+        <div class="team-gold-bar"></div>
+        <div class="team-photo-placeholder">
+          <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="38" r="22" stroke="#b89a5e" stroke-width="1.5"/>
+            <path d="M10 110 C10 80 90 80 90 110" stroke="#b89a5e" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="team-info">
+        <span class="team-name">Dr. Carlos Monteiro</span>
+        <span class="team-role">Sócio Fundador</span>
+        <p class="team-spec">Doutor em Direito Tributário pela USP. Membro do IBDT. Mais de 25 anos de atuação em contencioso tributário e planejamento fiscal.</p>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-photo">
+        <div class="team-gold-bar"></div>
+        <div class="team-photo-placeholder">
+          <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="38" r="22" stroke="#b89a5e" stroke-width="1.5"/>
+            <path d="M10 110 C10 80 90 80 90 110" stroke="#b89a5e" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="team-info">
+        <span class="team-name">Dra. Ana Figueiredo</span>
+        <span class="team-role">Sócia — Direito Empresarial</span>
+        <p class="team-spec">Especialista em M&A e reestruturação societária pela FGV. Atua em operações de fusão, aquisição e contratos empresariais complexos.</p>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-photo">
+        <div class="team-gold-bar"></div>
+        <div class="team-photo-placeholder">
+          <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="38" r="22" stroke="#b89a5e" stroke-width="1.5"/>
+            <path d="M10 110 C10 80 90 80 90 110" stroke="#b89a5e" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="team-info">
+        <span class="team-name">Dr. Rafael Souza</span>
+        <span class="team-role">Sócio — Licitações e Público</span>
+        <p class="team-spec">Pós-graduado em Direito Administrativo e Licitações. Referência em assessoria de contratos públicos, PPP e concessões nas esferas federal e estadual.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <div class="contact-left reveal">
+    <div class="sep">
+      <div class="sep-line" style="background:rgba(184,154,94,0.6)"></div>
+      <span class="sep-label">Contato</span>
+    </div>
+    <h2>Vamos conversar sobre o <em>seu caso</em></h2>
+    <p>Entre em contato para uma consulta inicial. Nossa equipe está pronta para analisar sua situação e apresentar as melhores alternativas jurídicas disponíveis.</p>
+
+    <div class="contact-info-row">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#b89a5e" stroke-width="1.5">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <div>
+        <span class="contact-detail-label">Endereço</span>
+        <span class="contact-detail-value">Av. Paulista, 1636 — 10º andar<br>São Paulo / SP — CEP 01310-200</span>
+      </div>
+    </div>
+
+    <div class="contact-info-row">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#b89a5e" stroke-width="1.5">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.63 2.18 2 2 0 012.62 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.6a16 16 0 006.29 6.29l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      <div>
+        <span class="contact-detail-label">Telefone / WhatsApp</span>
+        <span class="contact-detail-value">(11) 3456-7890</span>
+      </div>
+    </div>
+
+    <div class="contact-info-row">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#b89a5e" stroke-width="1.5">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      <div>
+        <span class="contact-detail-label">E-mail</span>
+        <span class="contact-detail-value">contato@monteiroassociados.adv.br</span>
+      </div>
+    </div>
+
+    <div class="contact-info-row">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#b89a5e" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <div>
+        <span class="contact-detail-label">Horário de Atendimento</span>
+        <span class="contact-detail-value">Segunda a Sexta, das 9h às 18h</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form reveal" id="form-section">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input type="text" placeholder="Seu nome">
+      </div>
+      <div class="form-group">
+        <label>Empresa</label>
+        <input type="text" placeholder="Nome da empresa">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com">
+      </div>
+      <div class="form-group">
+        <label>Telefone</label>
+        <input type="tel" placeholder="(00) 00000-0000">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Área de Interesse</label>
+      <select>
+        <option value="" disabled selected>Selecione uma área</option>
+        <option>Direito Tributário</option>
+        <option>Direito Empresarial</option>
+        <option>Licitações Públicas</option>
+        <option>Direito Regulatório</option>
+        <option>Outra área</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Descreva brevemente seu caso</label>
+      <textarea placeholder="Conte-nos sobre sua necessidade jurídica..."></textarea>
+    </div>
+    <button class="form-submit" onclick="handleSubmit(event)">Enviar Mensagem →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Monteiro <span>&</span> Associados</span>
+  <span class="footer-copy">© 2025 Monteiro & Associados Advocacia. Todos os direitos reservados.<br>Este site tem caráter exclusivamente informativo, nos termos do Código de Ética da OAB.</span>
+  <span class="footer-oab">OAB/SP 123.456<br>CNPJ 00.000.000/0001-00</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    btn.textContent = 'Mensagem enviada! ✓';
+    btn.style.background = '#4a7c59';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.textContent = 'Enviar Mensagem →';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+
+  // Smooth nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      e.preventDefault();
+      const el = document.querySelector(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
